@@ -53,7 +53,7 @@ function App() {
     <div className="app">
       <div className="app_left">
         <div className="app_header">
-          <h1>COVID-19 TRACKER</h1>
+          <h1>COVID-19</h1>
           <FormControl className="app_dropdown">
             <Select
               variant="outlined"
@@ -71,7 +71,7 @@ function App() {
         <div className="app_stats">
           <InfoBox
             onClick={(e) => setCasesType("cases")}
-            title="Coronavirus Cases"
+            title="Total Cases"
             isRed
             active={casesType === "cases"}
             cases={prettyPrintStat(countryInfo.todayCases)}
@@ -79,14 +79,14 @@ function App() {
           />
           <InfoBox
             onClick={(e) => setCasesType("recovered")}
-            title="Recovered"
+            title="Recovered Cases"
             active={casesType === "recovered"}
             cases={prettyPrintStat(countryInfo.todayRecovered)}
             total={numeral(countryInfo.recovered).format("0.0a")}
           />
           <InfoBox
             onClick={(e) => setCasesType("deaths")}
-            title="Deaths"
+            title="Total Deaths"
             isRed
             active={casesType === "deaths"}
             cases={prettyPrintStat(countryInfo.todayDeaths)}
